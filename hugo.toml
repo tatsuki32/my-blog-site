@@ -1,0 +1,14 @@
+baseURL = 'https://your-username.github.io/my-blog-site/' # ここは後であなたのGitHub PagesのURLに設定します。一旦はこのままでOK
+languageCode = 'ja-jp' # 日本語サイトの場合、このままでOK
+title = 'Tatsuki Mitsuhashi オフィシャル' # ここはあなたのブログのタイトルに変更してください
+
+# ★ここから追加または編集★
+theme = 'ananke' # この行を追加または編集して、Anankeテーマを使うことを指定
+publishDir = 'docs' # この行を追加！GitHub Pagesでのデプロイを簡単にするため
+
+# 以下はテーマのAnankeに関する設定例です。
+# テーマによって設定方法は異なりますが、まずはこれをコピペして試してみましょう。
+[params]
+  description = "私の素晴らしいブログへようこそ！" # あなたのブログの簡単な説明
+
+# その他、テーマによっては色々な設定がありますが、まずは最低限でOKです
