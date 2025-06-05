@@ -1,14 +1,23 @@
-baseURL = 'https://your-username.github.io/my-blog-site/' # ここは後であなたのGitHub PagesのURLに設定します。一旦はこのままでOK
-languageCode = 'ja-jp' # 日本語サイトの場合、このままでOK
-title = 'Tatsuki Mitsuhashi オフィシャル' # ここはあなたのブログのタイトルに変更してください
+baseURL = 'https://tatsuki32.github.io/my-blog-site/' # ★あなたのGitHub Pagesの最終URLに合わせる
+languageCode = 'ja-jp'
+title = 'Beyond Borders, Beyond Books | たっつぁんのボーダレス学習と世界探求' 
+publishDir = 'docs' 
 
-# ★ここから追加または編集★
-theme = 'ananke' # この行を追加または編集して、Anankeテーマを使うことを指定
-publishDir = 'docs' # この行を追加！GitHub Pagesでのデプロイを簡単にするため
-
-# 以下はテーマのAnankeに関する設定例です。
-# テーマによって設定方法は異なりますが、まずはこれをコピペして試してみましょう。
 [params]
-  description = "私の素晴らしいブログへようこそ！" # あなたのブログの簡単な説明
+  description = "通信制大学生として世界を旅しながら、多言語学習とノマドビジネスを実践。リアルな経験と深い考察を通じて、新たな働き方・学び方・生き方を提案します。" 
+  author = "たっつぁん"
+  # Twitterカードで表示されるサイトと著者のTwitterアカウントID
+  twitter_site = "@your_twitter_id"     # ★あなたのTwitter IDに置き換え
+  twitter_creator = "@your_twitter_id"  # ★あなたのTwitter IDに置き換え
 
-# その他、テーマによっては色々な設定がありますが、まずは最低限でOKです
+# SEO強化のための設定 (Anankeテーマは不要な場合も多いが、念のため)
+[markup.goldmark.renderer]
+  unsafe = true # Markdown内でHTMLタグを使えるようにする (広告コードなどで必要になる場合あり)
+
+# RSSフィードの設定（デフォルトで良いことが多い）
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+  page = ["HTML"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  taxonomyTerm = ["HTML", "RSS"]

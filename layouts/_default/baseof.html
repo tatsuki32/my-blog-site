@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.Language.Lang }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{ block "title" . }}{{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ .Site.Params.description }}">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXX" crossorigin="anonymous"></script>
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YYYYYYYYY"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-YYYYYYYYY');  
+    </script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <meta property="og:url" content="{{ .Permalink }}">
+    <meta property="og:site_name" content="{{ .Site.Title }}">
+    <meta property="og:title" content="{{ block "title" . }}{{ .Site.Title }}{{ end }}">
+    <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Summary | default .Site.Params.description }}{{ end }}">
+    <meta property="og:image" content="{{ if .Params.image }}{{ .Params.image | absURL }}{{ else }}{{ .Site.Params.default_og_image | absURL }}{{ end }}">
+    <meta property="og:locale" content="{{ .Site.LanguageCode | default "ja_JP" }}">
+    <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ block "title" . }}{{ .Site.Title }}{{ end }}">
+    <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ .Summary | default .Site.Params.description }}{{ end }}">
+    <meta name="twitter:image" content="{{ if .Params.image }}{{ .Params.image | absURL }}{{ else }}{{ .Site.Params.default_og_image | absURL }}{{ end }}">
+    {{ with .Site.Params.twitter_site }}<meta name="twitter:site" content="{{ . }}">{{ end }}
+    {{ with .Site.Params.twitter_creator }}<meta name="twitter:creator" content="{{ . }}">{{ end }}
+</head>
+<body>
+    {{ partial "header.html" . }} # カスタムヘッダーを読み込む
+
+    <main>
+        {{ block "main" . }}{{ end }} # 各ページのメインコンテンツが入るブロック
+    </main>
+
+    {{ partial "footer.html" . }} # カスタムフッターを読み込む
+</body>
+</html> # # ca-pub-XXXXXXXXXXXXX と G-YYYYYYYYY はあなたのIDに置き換えてください。
+Font Awesomeの integrity 属性は、公式サイトで取得したものを正しく設定してください。
+
+

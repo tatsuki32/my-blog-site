@@ -1,0 +1,20 @@
+<li class="li-with-image">
+  {{ with .Params.image }}
+    <div class="thumbnail">
+      <a href="{{ .Permalink }}">
+        <img src="{{ . | relURL }}" alt="{{ $.Title }}">
+      </a>
+    </div>
+  {{ end }}
+  <div class="content">
+    <h3 class="f4 lh-title mb2 fw6"><a href="{{ .Permalink }}" class="link dark-gray hover-red">{{ .Title }}</a></h3>
+    <p class="f6 lh-copy mid-gray mb2">{{ .Summary | truncate 70 }}</p>
+    <div class="meta f6 lh-copy gray">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006年1月2日" }}</time>
+      {{ with .Params.categories }}
+        <span class="ml1 mr1">|</span>
+        {{ range . }}<a href="{{ "/categories/" | relURL }}{{ . | urlize }}" class="link dim gray">{{ . }}</a> {{ end }}
+      {{ end }}
+    </div>
+  </div>
+</li>

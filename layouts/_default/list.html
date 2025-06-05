@@ -1,0 +1,13 @@
+{{ define "main" }}
+    <h1>{{ .Title }}</h1>
+    <ul>
+        {{ range .Paginator.Pages }}
+        <li>
+            <a href="{{ .Permalink }}">{{ .Title }}</a>
+            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006年1月2日" }}</time>
+            <p>{{ .Summary }}</p>
+        </li>
+        {{ end }}
+    </ul>
+    {{ partial "pagination.html" . }}
+{{ end }}

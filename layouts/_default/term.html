@@ -1,0 +1,30 @@
+{{ define "main" }}
+  <header>
+    <div class="pb3-m pb6-l bg-black">
+      {{ partial "site-header.html" . }}
+      <div class="tc-l pv3 ph3 ph4-ns">
+        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
+          {{ .Title }}
+        </h1>
+        {{ with .Description }}
+          <h2 class="f5 fw2 white-80 mt0 lh-copy">
+            {{ . }}
+          </h2>
+        {{ end }}
+      </div>
+    </div>
+  </header>
+  <main class="pb7" role="main">
+    <div class="mw8 center">
+      <section class="ph4">
+        <ul class="list pl0 ml0 cf">
+          {{ range .Data.Terms.ByCount }}
+          <li class="ph3 pv2 ph4-ns bb b--light-gray">
+            <a href="{{ .Page.Permalink }}" class="link dim gray f4">{{ .Page.Title }} ({{ .Count }})</a>
+          </li>
+          {{ end }}
+        </ul>
+      </section>
+    </div>
+  </main>
+{{ end }}
