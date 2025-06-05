@@ -1,13 +1,14 @@
 {{ define "main" }}
-    <h1>{{ .Title }}</h1>
-    <ul>
-        {{ range .Paginator.Pages }}
-        <li>
-            <a href="{{ .Permalink }}">{{ .Title }}</a>
-            <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006年1月2日" }}</time>
-            <p>{{ .Summary }}</p>
-        </li>
-        {{ end }}
-    </ul>
-    {{ partial "pagination.html" . }}
+    <section class="blog-section container">
+        <h2>{{ .Title }}</h2> <div class="article-grid">
+            {{ range .Paginator.Pages }}
+            <article class="blog-post">
+                <span class="date">{{ .Date.Format "2006/01/02" }}</span>
+                <h3>{{ .Title }}</h3>
+                <p>{{ .Summary }}</p>
+                <a href="{{ .Permalink }}" class="read-more">続きを読む</a>
+            </article>
+            {{ end }}
+        </div>
+        {{ partial "pagination.html" . }} </section>
 {{ end }}

@@ -1,12 +1,28 @@
-<header>
-    <nav>
-        <h1><a href="/">{{ .Site.Title }}</a></h1>
-        <ul>
-            <li><a href="/">ホーム</a></li>
-            <li><a href="/posts/">ブログ</a></li>
-            <li><a href="/about/">私について</a></li>
-            <li><a href="/projects/">プロジェクト</a></li>
-            <li><a href="/contact/">お問い合わせ</a></li>
-        </ul>
-    </nav>
+<header class="main-header">
+    <div class="container header-content">
+        <button class="lang-switcher-toggle">LG</button> <div class="logo">{{ .Site.Title }}</div> <div class="lang-switcher">
+            <a href="{{ "/jp/" | relURL }}" class="active">JP</a>
+            <a href="{{ "/en/" | relURL }}">EN</a>
+            <a href="{{ "/kg/" | relURL }}">KG</a>
+            <a href="{{ "/ru/" | relURL }}">RU</a>
+        </div>
+
+        <nav class="main-nav">
+            <button class="hamburger" aria-label="メニューを開く">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+            <ul class="nav-list">
+                <li><a href="{{ "/" | relURL }}">ホーム</a></li>
+                <li><a href="{{ "/posts/" | relURL }}">日記</a></li> <li><a href="{{ "/multilingual-journey/" | relURL }}">多言語奮闘記</a></li> <li><a href="{{ "/about/" | relURL }}">自己紹介</a></li> <li><a href="{{ "/contact/" | relURL }}">お問い合わせ</a></li> </ul>
+        </nav>
+    </div>
+    <div class="lang-switcher-dropdown">
+        <button class="lang-switcher-close-button">×</button>
+        <a href="{{ "/jp/" | relURL }}">JP</a>
+        <a href="{{ "/en/" | relURL }}">EN</a>
+        <a href="{{ "/kg/" | relURL }}">KG</a>
+        <a href="{{ "/ru/" | relURL }}">RU</a>
+    </div>
 </header>

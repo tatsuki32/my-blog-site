@@ -1,31 +1,15 @@
 {{ define "main" }}
-    <article>
+    <section class="individual-article container">
         <h1>{{ .Title }}</h1>
-        <p class="post-meta">投稿日: {{ .Date.Format "2006年1月2日" }}</p>
-        {{ .Content }}
-
-        <div class="ad-container">
-            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXX"
-             crossorigin="anonymous"></script>
-            <ins class="adsbygoogle"
-                 style="display:block; text-align:center;"
-                 data-ad-layout="in-article"
-                 data-ad-format="fluid"
-                 data-ad-client="ca-pub-XXXXXXXXXXXXX"
-                 data-ad-slot="YYYYYYYYY"></ins>
-            <script>
-                 (adsbygoogle = window.adsbygoogle || []).push({});
-            </script>
+        <span class="date">{{ .Date.Format "2006/01/02" }}</span>
+        <div class="article-content">
+            {{ .Content }}
         </div>
-
-        <div class="cta-section">
-            <h2>あなたの次のステップをサポート</h2>
-            <a href="/projects/" class="cta-button">サービス詳細へ</a>
+        <div class="ad-unit" style="margin-top: 30px; margin-bottom: 30px; border:1px solid #eee; padding:10px; text-align:center;">
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXX" crossorigin="anonymous"></script>
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXX" data-ad-slot="YYYYYYYYY" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
         </div>
-
-        <div class="share-buttons">
-            <a href="https://twitter.com/share?url={{ .Permalink }}&text={{ .Title }}" target="_blank" rel="noopener"><i class="fab fa-twitter"></i> Twitter</a>
-            <a href="https://www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank" rel="noopener"><i class="fab fa-facebook-f"></i> Facebook</a>
-        </div>
-    </article>
+        <a href="{{ "/posts/" | relURL }}" class="back-to-list">記事一覧へ戻る &rarr;</a>
+    </section>
 {{ end }}

@@ -1,7 +1,59 @@
-<footer>
-    <p>&copy; {{ now.Year }} {{ .Site.Title }} All rights reserved.</p>
-    <p><a href="/privacy-policy/">プライバシーポリシー</a></p>
-    <div class="social-links">
-        <a href="https://twitter.com/{{ .Site.Params.twitter_site }}" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+{{ define "main" }}
+    <section id="hero" class="hero-section">
+        <div class="container">
+            <h1>言の葉と戯れる</h1>
+            <p>世界中の言語、その使い方、そして表現の可能性を巡る旅</p>
         </div>
-</footer>
+    </section>
+
+    <section id="thought" class="thought-section container">
+        <h2>夜寝る前に明日も楽しみだなと思って寝られる日々を</h2>
+        <p>
+            言葉にハマってしまった私。虜になった。仕事に生かす為でも、健康のためでもない。ただ、色々な言語に触れ、旅の中で現地の言葉を聞き、使う。時には今ではほとんど使われていない言語でさえも。
+            私は学んでみたくなってしまった。このブログもプログラミング言語という存在を知った時に、作ろうと決心をした。リスニングもスピーキングもないプログラミング言語もそれぞれに特色や趣がある。
+            そんな私の大好きを詰め込んだこのサイトを開設しました。 2025年5月25日 三橋龍起（たつき）
+        </p>
+    </section>
+
+    <section class="home-cta-buttons container">
+        <div class="text-center" style="margin-bottom: 30px;">
+            <a href="{{ "/posts/" | relURL }}" class="btn">日記(ブログ)</a>
+        </div>
+        <div class="text-center">
+            <a href="{{ "/multilingual-journey/" | relURL }}" class="btn">多言語奮闘記</a>
+        </div>
+    </section>
+
+   <section id="youtube-section" class="youtube-section container">
+        <h2>視覚と聴覚の世界</h2>
+        <div class="youtube-thumbnail-wrapper">
+            <img src="/images/youtube-thumbnail.jpg" alt="YouTube動画のサムネイル" class="thumbnail"> <div class="play-button"></div>
+            <iframe
+                width="560"
+                height="315"
+                src="https://www.youtube.com/embed/YOUR_VIDEO_ID" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen>
+            </iframe>
+        </div>
+        <p class="text-center">身の回りの日常を不定期で発信しています。ぜひご覧ください！</p>
+    </section>
+
+    <section id="about-me-cta" class="profile-section container">
+        <div class="text-center">
+            <h2>自己紹介</h2>
+            <p>たつき、神奈川県茅ヶ崎生まれ、多言語学習が趣味。世界旅をしながら語学留学や独学をしている。</p>
+            <a href="{{ "/about/" | relURL }}" class="btn">詳しい自己紹介はこちら</a>
+        </div>
+    </section>
+
+    <section id="contact-cta" class="contact-section container">
+        <div class="text-center">
+            <h2>お問い合わせ</h2>
+            <p>ご意見、ご感想、コラボレーションのご提案など、お気軽にご連絡ください。</p>
+            <a href="{{ "/contact/" | relURL }}" class="btn">問い合わせフォームはこちら</a>
+        </div>
+    </section>
+{{ end }}
